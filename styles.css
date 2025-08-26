@@ -159,15 +159,15 @@ body {
 }
 
 .hero-slide:nth-child(1) {
-    background-image: url('imagens/slide4.png');
+    background-image: url('imagens/sl4.jpg');
 }
 
 .hero-slide:nth-child(2) {
-    background-image: url('imagens/slide5.png');
+    background-image: url('imagens/sl5.jpg');
 }
 
 .hero-slide:nth-child(3) {
-    background-image: url('imagens/slide6.png');
+    background-image: url('imagens/sl6.jpg');
 }
 
 /* Imagens locais para todas as telas */
@@ -387,7 +387,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 1080px;
     margin: 0 auto;
     animation: fadeInUp 1s ease-out;
 }
@@ -725,6 +725,25 @@ body {
 }
 
 /* Removidas as partículas flutuantes */
+
+/* Ícone dos cards */
+.pain-point-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pain-point-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: all 0.3s ease;
+}
+
+.pain-point:hover .pain-point-icon img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+}
 
 /* Ícones removidos - design limpo */
 
@@ -1506,9 +1525,10 @@ body {
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     animation: fadeInUp 0.6s ease-out;
+    border: none;
+    box-shadow: none;
 }
 
 .faq-item:nth-child(1) { animation-delay: 0.1s; }
@@ -1519,7 +1539,6 @@ body {
 
 .faq-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 .faq-question {
@@ -1536,6 +1555,8 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
+    border-bottom: none;
+    outline: none;
 }
 
 .faq-question:hover {
@@ -1547,11 +1568,26 @@ body {
     color: #666;
     line-height: 1.6;
     display: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .faq-item.active .faq-answer {
     display: block;
     animation: slideDown 0.3s ease-out;
+    border-top: none;
+    border-bottom: none;
+}
+
+/* Remover qualquer linha ou separador visual */
+.faq-item::before,
+.faq-item::after,
+.faq-question::before,
+.faq-question::after,
+.faq-answer::before,
+.faq-answer::after {
+    display: none !important;
+    content: none !important;
 }
 
 @keyframes slideDown {
@@ -1681,7 +1717,8 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 350px);
+    justify-content: center;
     gap: 30px;
     position: relative;
     z-index: 2;
@@ -1735,16 +1772,11 @@ body {
 }
 .contact-item:nth-child(2) { 
     animation-delay: 0.2s; 
-    --card-accent: #ff6b9d;
-}
-.contact-item:nth-child(3) { 
-    animation-delay: 0.3s; 
     --card-accent: #feca57;
 }
 
 .contact-item:nth-child(1)::before { background: linear-gradient(90deg, var(--card-accent), #6dd5ed); }
-.contact-item:nth-child(2)::before { background: linear-gradient(90deg, var(--card-accent), #ff8fab); }
-.contact-item:nth-child(3)::before { background: linear-gradient(90deg, var(--card-accent), #ffd93d); }
+.contact-item:nth-child(2)::before { background: linear-gradient(90deg, var(--card-accent), #ffd93d); }
 
 .contact-item:hover {
     transform: translateY(-8px) scale(1.02);

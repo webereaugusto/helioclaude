@@ -1,0 +1,14 @@
+# Arquivos de backup e compressão
+*.rar
+*.zip
+*.7z
+
+# Arquivos temporários
+h origin main
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
